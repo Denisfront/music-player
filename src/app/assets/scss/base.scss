@@ -1,0 +1,21 @@
+@import '~normalize.css';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $--font-base;
+  font-weight: $--font-weight-regular;
+  font-size: $--font-size-base;
+  color: $--text-color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  text-size-adjust: 100%;
+}
+
+.base {
+  height: 100vh;
+  background: #e3e3e3;
+}
