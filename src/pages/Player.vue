@@ -1,12 +1,25 @@
 <template>
-  <div class="home"></div>
+  <div class="home">
+    <MusicPlayerCard>
+      <template #append>
+        <img src="../app/assets/icons/music-plate.svg" alt="" />
+      </template>
+    </MusicPlayerCard>
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import { MusicPlayerCard } from '@/entities/music-player';
 
 export default defineComponent({
   name: 'HomeView',
+  components: {
+    MusicPlayerCard,
+  },
+  setup() {
+    return {};
+  },
 });
 </script>
 

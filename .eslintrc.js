@@ -1,20 +1,72 @@
 module.exports = {
   root: true,
+  parser: 'vue-eslint-parser',
   env: {
     node: true,
   },
+
   extends: [
-    'plugin:vue/vue3-essential',
-    '@vue/airbnb',
+    'prettier',
+    'plugin:vue/essential',
+    'eslint:recommended',
     '@vue/typescript/recommended',
     'plugin:prettier/recommended',
   ],
+
   plugins: ['prettier', '@typescript-eslint'],
   parserOptions: {
-    ecmaVersion: 2020,
+    parser: '@typescript-eslint/parser',
   },
+
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'vue/no-multiple-template-root': 'off',
+    'vue/multi-word-component-names': 'off',
+    'vue/no-v-model-argument': 'warn',
+    'no-unused-vars': 'warn',
+    '@typescript-eslint/ban-ts-comment': 'off',
+    // not needed for vue 3
+    'vue/order-in-components': [
+      'error',
+      {
+        order: [
+          'el',
+          'name',
+          'key',
+          'parent',
+          'functional',
+          ['delimiters', 'comments'],
+          ['components', 'directives', 'filters'],
+          'extends',
+          'mixins',
+          ['provide', 'inject'],
+          'ROUTER_GUARDS',
+          'layout',
+          'middleware',
+          'validate',
+          'scrollToTop',
+          'transition',
+          'loading',
+          'inheritAttrs',
+          'model',
+          ['props', 'propsData'],
+          'emits',
+          'setup',
+          'asyncData',
+          'data',
+          'fetch',
+          'head',
+          'computed',
+          'watch',
+          'watchQuery',
+          'LIFECYCLE_HOOKS',
+          'methods',
+          ['template', 'render'],
+          'renderError',
+        ],
+      },
+    ],
+    'vue/max-len': ['warn'],
   },
-};
+}

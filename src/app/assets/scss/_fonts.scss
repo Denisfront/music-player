@@ -4,10 +4,10 @@
     font-style: normal;
     font-weight: $weight;
     src:
-      local("#{$name}#{$weight-name}"),
-      url("../fonts/#{$name}/#{$name}#{$weight-name}.woff2") format("woff2"),
-      url("../fonts/#{$name}/#{$name}#{$weight-name}.woff") format("woff"),
-      url("../fonts/#{$name}/#{$name}#{$weight-name}.ttf") format("truetype");
+      local('#{$name}#{$weight-name}'),
+      url('../fonts/#{$name}/#{$name}#{$weight-name}.woff2') format('woff2'),
+      url('../fonts/#{$name}/#{$name}#{$weight-name}.woff') format('woff'),
+      url('../fonts/#{$name}/#{$name}#{$weight-name}.ttf') format('truetype');
   }
 }
 

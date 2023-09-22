@@ -4,4 +4,12 @@ $--font-base: 'Roboto', $--font-fallback;
 $--font-weight-regular: 400;
 $--font-size-base: 24px;
 
+// colors
+$--color-white: '#ffff';
+
 $--text-color: #0000;
+$--background-player-card: $--color-white;
+
+:root {
+  --background-player-card: #fffdfd;
+}
