@@ -59,12 +59,12 @@ function createAudioContextService() {
     throw new Error('No audioElement');
   }
 
-  function createAnalyser() {
+  function createAnalyser(): AnalyserNode {
     if (audioContext) {
       analyser = audioContext.createAnalyser();
     }
 
-    return analyser;
+    throw new Error('No analyser');
   }
 
   function getAudioContext() {
