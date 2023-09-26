@@ -62,6 +62,8 @@ function createAudioContextService() {
   function createAnalyser(): AnalyserNode {
     if (audioContext) {
       analyser = audioContext.createAnalyser();
+
+      return analyser;
     }
 
     throw new Error('No analyser');
