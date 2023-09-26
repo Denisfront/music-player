@@ -14,7 +14,4 @@
 @include font-face('Roboto', 'Regular', $--font-weight-regular);
 @include font-face('Roboto', 'Medium', $--font-weight-medium);
 @include font-face('Roboto', 'Bold', $--font-weight-bold);
-@include font-face('OpenSans', 'Regular', $--font-weight-regular);
-@include font-face('OpenSans', 'Bold', $--font-weight-bold);
-@include font-face('NotoSans', 'Regular', $--font-weight-regular);
-@include font-face('NotoSans', 'Bold', $--font-weight-bold);
+

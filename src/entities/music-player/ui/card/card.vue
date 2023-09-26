@@ -58,7 +58,9 @@ export default defineComponent({
     'controls progress-bar';
   height: 100%;
   grid-template-columns: 64px 313px;
-  grid-template-rows: 28px 1fr 28px;
+  grid-template-rows: 54px 1fr 54px;
+  margin-right: 35px;
+  column-gap: 25px;
 }
 
 .player-card__controls {
@@ -67,13 +69,14 @@ export default defineComponent({
 
 .player-card__slider {
   grid-area: slider;
+  align-self: center;
 }
 
 .player-card__progress-bar {
   grid-area: progress-bar;
+  align-self: center;
 }
 
 .player-card__append {
-  animation: rotate 3s linear infinite;
 }
 </style>

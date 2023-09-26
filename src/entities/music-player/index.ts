@@ -1,3 +1,8 @@
 import { MusicPlayerCard } from './ui';
+import { useMusicPlayer } from './model';
 
-export { MusicPlayerCard };
+const musicPlayerState = {
+  useMusicPlayer,
+};
+
+export { MusicPlayerCard, musicPlayerState };

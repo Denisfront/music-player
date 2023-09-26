@@ -40,7 +40,7 @@ function convertActualValueToSnappedValue(
   const snappedValue = (snappedPercentage / 100) * maxValue;
   return snappedValue * 100;
 }
-
+// @ts-ignore
 function findClosestNumber(target, numbers) {
   let closestNumber = numbers[0];
   let closestDifference = Math.abs(target - closestNumber);
@@ -126,8 +126,6 @@ export default defineComponent({
       }, []);
     }
     steps = steps.sort((a, b) => a - b);
-    console.log(steps);
-    console.log(stepsMap);
 
     const localModelValue = computed({
       get() {
@@ -143,12 +141,19 @@ export default defineComponent({
       () => props.modelValue,
       newValue => {
         if (!isDragging.value) {
-          sliderValueWidth.value = convertActualValueToSnappedValue(
-            newValue,
-            props.maxValue,
-            props.step,
-          );
+          if (props.step) {
+            sliderValueWidth.value = convertActualValueToSnappedValue(
+              newValue,
+              props.maxValue,
+              props.step,
+            );
+          } else {
+            sliderValueWidth.value = newValue;
+          }
         }
+      },
+      {
+        immediate: true,
       },
     );
 
@@ -159,7 +164,6 @@ export default defineComponent({
       e.preventDefault();
 
       const multiplier = e.shiftKey ? props.step * 3 : props.step;
-      console.log(e.key);
 
       if (e.key === 'ArrowLeft') {
         localValue = localValue - multiplier;
@@ -173,6 +177,7 @@ export default defineComponent({
     }
 
     function onKeydown(e: KeyboardEvent) {
+      // @ts-ignore
       const newValue = parseKeydown(e, localModelValue.value);
 
       newValue != null && emit('update:modelValue', newValue);
@@ -182,8 +187,9 @@ export default defineComponent({
       isDragging.value = false;
       focused.value = false;
     }
-
+    // @ts-ignore
     function handleClick(e) {
+      // @ts-ignore
       const sliderRect = sliderTrackElement.value.getBoundingClientRect();
 
       let newValue =
@@ -200,14 +206,16 @@ export default defineComponent({
 
       isDragging.value = true;
     }
-
+    // @ts-ignore
     function handlerangeUpdate(e) {
       if (!isDragging.value) {
         return;
       }
+      // @ts-ignore
       if (localModelValue.value > props.maxValue) {
         return;
       }
+      // @ts-ignore
       const sliderRect = sliderTrackElement.value.getBoundingClientRect();
 
       // let newValue =
@@ -277,7 +285,6 @@ export default defineComponent({
           oldCurrentStepWidth = currentStepWidth;
           sliderValueWidth.value = Math.round(currentStepWidth);
           // console.log(localModelValue.value + props.step);
-          console.log('f');
 
           localModelValue.value = stepsMap[currentStepWidth];
         }
@@ -291,17 +298,18 @@ export default defineComponent({
         localModelValue.value = actualValue;
       }
     }
-
+    // @ts-ignore
     function handleKeyUp(event) {
       if (event.key === 'Tab') {
         focused.value = true;
       }
     }
-
+    // @ts-ignore
     function draggingMousedown(e) {
       isDragging.value = true;
       focused.value = true;
       offsetX.value =
+        // @ts-ignore
         e.clientX - sliderControlElement.value.getBoundingClientRect().left;
     }
 

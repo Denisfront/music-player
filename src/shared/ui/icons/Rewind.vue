@@ -1,0 +1,23 @@
+<template>
+  <svg width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M14.666 11.691 6.537 5.745c-1.736-1.197-3.87.36-3.87 2.823V12m12 8.309-8.13 5.947c-1.736 1.196-3.87-.361-3.87-2.824v-6.099M23.16 21.722l-4.945 3.252c-1.592 1.046-3.548-.316-3.548-2.471V9.497c0-2.155 1.956-3.517 3.548-2.47l9.89 6.502c1.638 1.077 1.638 3.865 0 4.942l-1.236.813"
+      stroke="#1C274C"
+      stroke-width="2"
+      stroke-linecap="round"
+    />
+  </svg>
+</template>
+
+<script lang="ts">
+import { defineComponent } from 'vue';
+
+export default defineComponent({
+  name: 'RewindIcon',
+  setup() {
+    return {};
+  },
+});
+</script>
+
+<style scoped></style>
